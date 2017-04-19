@@ -1,8 +1,8 @@
-const konnector = require('./konnector')
+console.error("stderr output test")
+console.error("COZY_DOMAIN=" + process.env.COZY_DOMAIN)
+console.error("COZY_FIELDS=" + process.env.COZY_FIELDS)
+console.error("COZY_CREDENTIALS=" + process.env.COZY_CREDENTIALS)
 
-const cozyFields = JSON.parse(process.env.COZY_FIELDS)
-
-konnector.fetch(cozyFields, err => {
-  console.log('The konnector has been run')
-  if (err) console.log(err, 'There was an error')
-})
+setTimeout(function() {
+  console.log(JSON.stringify({foo:"bar"}))
+}, 5 * 1000)
